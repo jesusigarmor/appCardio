@@ -1,3 +1,5 @@
+import 'package:appcardio/src/constants/colors.dart';
+import 'package:appcardio/src/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import '../../../../constants/image_strings.dart';
 import '../../../../constants/text_string.dart';
@@ -7,16 +9,55 @@ class WelcomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
+        padding: EdgeInsets.all(tDefaultSize),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image(image: AssetImage(tWelcomeScreenImage)),
-            Text(tWelcomeTitle),
-            Text(tWelcomeSubTitle),
+            Image(
+              image: AssetImage(tWelcomeScreenImage),
+              height: height * 0.6,
+            ),
+            Column(
+              children: [
+                Text(tWelcomeTitle,
+                    style: Theme.of(context).textTheme.headlineSmall),
+                Text(
+                  tWelcomeSubTitle,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
             Row(
               children: [
-                OutlinedButton(onPressed: () {}, child: Text("Login"))
+                Expanded(
+                    child: OutlinedButton(
+                  onPressed: () {},
+                  child: Text("Login".toUpperCase()),
+                  style: OutlinedButton.styleFrom(
+                      shape: RoundedRectangleBorder(),
+                      foregroundColor: tSecondaryColor,
+                      side: BorderSide(color: tSecondaryColor),
+                      padding: EdgeInsets.symmetric(vertical: tButtonHeight)),
+                )),
+                const SizedBox(
+                  width: 10.0,
+                ),
+                Expanded(
+                    child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text("Signup".toUpperCase()),
+                  style: OutlinedButton.styleFrom(
+                      shape: RoundedRectangleBorder(),
+                      foregroundColor: tWhiteColor,
+                      backgroundColor: tSecondaryColor,
+                      side: BorderSide(color: tSecondaryColor),
+                      padding: EdgeInsets.symmetric(vertical: tButtonHeight)),
+                ))
               ],
             )
           ],

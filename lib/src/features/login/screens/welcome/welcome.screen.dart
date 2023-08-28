@@ -1,8 +1,11 @@
 import 'package:appcardio/src/constants/colors.dart';
 import 'package:appcardio/src/constants/sizes.dart';
+import 'package:appcardio/src/features/login/screens/login/login.screen.dart';
+import 'package:appcardio/src/features/login/screens/signup/signup.screen.dart';
 import 'package:flutter/material.dart';
 import '../../../../constants/image_strings.dart';
 import '../../../../constants/text_string.dart';
+import 'package:get/get.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -36,27 +39,27 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 Expanded(
                     child: OutlinedButton(
-                  onPressed: () {},
-                  child: Text("Login".toUpperCase()),
+                  onPressed: () => Get.to(() => const LoginScreen()),
                   style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(),
                       foregroundColor: tSecondaryColor,
                       side: BorderSide(color: tSecondaryColor),
                       padding: EdgeInsets.symmetric(vertical: tButtonHeight)),
+                  child: Text("Login".toUpperCase()),
                 )),
                 const SizedBox(
                   width: 10.0,
                 ),
                 Expanded(
                     child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text("Signup".toUpperCase()),
+                  onPressed: () => Get.to(() => const SignUpScreen()),
                   style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(),
                       foregroundColor: tWhiteColor,
                       backgroundColor: tSecondaryColor,
                       side: BorderSide(color: tSecondaryColor),
                       padding: EdgeInsets.symmetric(vertical: tButtonHeight)),
+                  child: Text("Signup".toUpperCase()),
                 ))
               ],
             )

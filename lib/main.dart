@@ -1,3 +1,4 @@
+import 'package:appcardio/src/features/login/controllers/splash_screen.controller.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
           ThemeData(brightness: Brightness.light, primarySwatch: Colors.indigo),
       darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: ThemeMode.system,
-      home: AppHome(),
+      home: SplashScreen(),
     );
   }
 }

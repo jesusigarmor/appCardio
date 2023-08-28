@@ -1,0 +1,27 @@
+import 'package:flutter/material.dart';
+import '../../../../constants/image_strings.dart';
+import '../../../../constants/text_string.dart';
+
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        child: Column(
+          children: [
+            Image(image: AssetImage(tWelcomeScreenImage)),
+            Text(tWelcomeTitle),
+            Text(tWelcomeSubTitle),
+            Row(
+              children: [
+                OutlinedButton(onPressed: () {}, child: Text("Login"))
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
